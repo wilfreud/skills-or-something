@@ -17,6 +17,7 @@ Free to use, free to contribute.
 | [Next.js Security Review](./nextjs-security-review/) | `nextjs-security-review` | Web Security | Auditing Next.js (App & Pages Router) for RSC data exposure, Server Actions authorization/IDOR, proxy/middleware bypasses, SSRF, and CVE tracking. |
 | [React Security Review](./react-security-review/) | `react-security-review` | Frontend Security | Auditing React code against OWASP Top 10:2025: XSS prevention (HTML, attributes, URLs), dangerous sinks, SSR/hydration, and CSP. |
 | [React Flow](./reactflow/) | `reactflow` | Graph & Canvas Visualization | Architecture, typing, and manipulation of interactive node-edge diagrams with `@xyflow/react`. |
+| [WhatsApp Cloud API](./whatsapp-cloud-api/) | `whatsapp-cloud-api` | Integrations & API | Use this skill when writing, editing, reviewing, or debugging integrations with Meta WhatsApp Cloud API or WhatsApp Business Platform. |
 
 ---
 
@@ -81,6 +82,14 @@ Each skill directory follows a consistent layout:
   - Graph invariant validation (preventing cycles, invalid connections, self-edges).
   - Performance optimization for large-scale graphs.
 - **References**: `doc-map.md`, `implementation-checklist.md`.
+
+### 6. [WhatsApp Cloud API](./whatsapp-cloud-api/)
+- **Focus**: Framework-agnostic rules for Meta WhatsApp Cloud API integrations.
+- **Key points**:
+  - Required doc freshness workflow to fetch current Meta docs before changing behavior.
+  - Integration shape separating route/controller, service/client, and business layer.
+  - Config baseline avoiding hardcoded access tokens and phone number IDs.
+- **References**: `doc-map.md`, `messages-api.md`, `templates-media-calling.md`, `webhooks-and-errors.md`.
 
 ---
 

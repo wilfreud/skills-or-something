@@ -1,0 +1,4 @@
+interface:
+  display_name: "WhatsApp Cloud API"
+  short_description: "Build reliable Meta WhatsApp Cloud API integrations"
+  default_prompt: "Use $whatsapp-cloud-api to implement or review a documented WhatsApp Cloud API integration."
