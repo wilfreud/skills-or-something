@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anime.js"
+  short_description: "Build performant Anime.js animations"
+  default_prompt: "Use $animejs to implement a documented, performant Anime.js animation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "React Flow"
+  short_description: "Build and review React Flow canvases"
+  default_prompt: "Use $reactflow to implement a typed, documented React Flow graph feature."
