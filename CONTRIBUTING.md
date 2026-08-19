@@ -25,7 +25,8 @@ When adding or modifying a skill:
 
 ## Commit Guidelines
 
-Use concise, conventional commit messages:
+Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification:
 - `feat(skill-name): add new skill`
 - `fix(skill-name): update references and CVE list`
 - `docs: update documentation`
+- `ci: add skill validation workflow`
