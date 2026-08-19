@@ -18,6 +18,7 @@ Free to use, free to contribute.
 | [React Security Review](./react-security-review/) | `react-security-review` | Frontend Security | Auditing React code against OWASP Top 10:2025: XSS prevention (HTML, attributes, URLs), dangerous sinks, SSR/hydration, and CSP. |
 | [React Flow](./reactflow/) | `reactflow` | Graph & Canvas Visualization | Architecture, typing, and manipulation of interactive node-edge diagrams with `@xyflow/react`. |
 | [WhatsApp Cloud API](./whatsapp-cloud-api/) | `whatsapp-cloud-api` | Integrations & API | Use this skill when writing, editing, reviewing, or debugging integrations with Meta WhatsApp Cloud API or WhatsApp Business Platform. |
+| [WhatsApp Flows JSON](./whatsapp-flows-json/) | `whatsapp-flows-json` | Integrations & API | Designing, reviewing, and integrating Meta WhatsApp Flows and Flow JSON, including endpoint encryption and validation. |
 
 ---
 
@@ -90,6 +91,14 @@ Each skill directory follows a consistent layout:
   - Integration shape separating route/controller, service/client, and business layer.
   - Config baseline avoiding hardcoded access tokens and phone number IDs.
 - **References**: `doc-map.md`, `messages-api.md`, `templates-media-calling.md`, `webhooks-and-errors.md`.
+
+### 7. [WhatsApp Flows JSON](./whatsapp-flows-json/)
+- **Focus**: Framework-agnostic rules for WhatsApp Flows JSON design, validation, and endpoint integration.
+- **Key points**:
+  - Strict adherence to official Meta Flow JSON versions and component limits.
+  - Clear separation between static and endpoint-powered Flows (Data API).
+  - Validation of screen IDs, routing, terminal screens, and dynamic data schemas.
+- **References**: `doc-map.md`, `flow-json-structure.md`, `components.md`, `sending-and-api.md`, `endpoint-security.md`.
 
 ---
 
