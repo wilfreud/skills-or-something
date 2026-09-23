@@ -17,6 +17,7 @@ Free to use, free to contribute.
 | [Next.js Security Review](./nextjs-security-review/) | `nextjs-security-review` | Web Security | Auditing Next.js (App & Pages Router) for RSC data exposure, Server Actions authorization/IDOR, proxy/middleware bypasses, SSRF, and CVE tracking. |
 | [React Security Review](./react-security-review/) | `react-security-review` | Frontend Security | Auditing React code against OWASP Top 10:2025: XSS prevention (HTML, attributes, URLs), dangerous sinks, SSR/hydration, and CSP. |
 | [React Flow](./reactflow/) | `reactflow` | Graph & Canvas Visualization | Architecture, typing, and manipulation of interactive node-edge diagrams with `@xyflow/react`. |
+| [Structural Refactor](./structural-refactor/) | `structural-refactor` | Code Architecture & Maintenance | Auditing and behavior-preserving refactoring of structural hotspots using semantic boundaries, coupling, and verification risk rather than line-count targets. |
 | [WhatsApp Cloud API](./whatsapp-cloud-api/) | `whatsapp-cloud-api` | Integrations & API | Use this skill when writing, editing, reviewing, or debugging integrations with Meta WhatsApp Cloud API or WhatsApp Business Platform. |
 | [WhatsApp Flows JSON](./whatsapp-flows-json/) | `whatsapp-flows-json` | Integrations & API | Designing, reviewing, and integrating Meta WhatsApp Flows and Flow JSON, including endpoint encryption and validation. |
 
@@ -30,11 +31,15 @@ Each skill directory follows a consistent layout:
 <skill-name>/
 ├── SKILL.md                 # Main instructions, operational workflows, and YAML metadata
 ├── references/              # In-depth technical guides, cheat sheets, and documentation maps
+├── scripts/                 # (Optional) Deterministic analysis helpers
+├── evals/                   # (Optional) Routing and behavioral evaluation cases
 └── agents/                  # (Optional) Agent interface and prompt configurations
 ```
 
 - **`SKILL.md`**: Defines activation triggers, implementation guidelines, step-by-step workflows, and operational constraints.
 - **`references/`**: Topic-specific reference documents loaded on demand to prevent context bloat.
+- **`scripts/`**: Optional deterministic helpers for mechanical analysis; the agent interprets their output.
+- **`evals/`**: Optional positive, negative, and adversarial cases used to verify routing and behavior.
 - **`agents/`**: Optional UI/agent metadata and default prompts.
 
 ---
@@ -84,7 +89,16 @@ Each skill directory follows a consistent layout:
   - Performance optimization for large-scale graphs.
 - **References**: `doc-map.md`, `implementation-checklist.md`.
 
-### 6. [WhatsApp Cloud API](./whatsapp-cloud-api/)
+### 6. [Structural Refactor](./structural-refactor/)
+- **Focus**: Diagnose and improve structural degradation while preserving observable behavior and avoiding arbitrary file splitting.
+- **Key points**:
+  - Two explicit modes: read-only **audit** and verified, behavior-preserving **refactor**.
+  - LOC is a triage signal, never a refactoring verdict; decisions combine structural, semantic, evolutionary, and verification-risk evidence.
+  - Recommends `LEAVE`, `WATCH`, or `REFACTOR`, and can identify over-fragmentation worth merging.
+  - Includes deterministic repository inventory and Git temporal-coupling helpers, plus routing and adversarial evaluations.
+- **References**: `hotspot-signals.md`, `decision-model.md`, `refactoring-protocol.md`, `evidence.md`.
+
+### 7. [WhatsApp Cloud API](./whatsapp-cloud-api/)
 - **Focus**: Framework-agnostic rules for Meta WhatsApp Cloud API integrations.
 - **Key points**:
   - Required doc freshness workflow to fetch current Meta docs before changing behavior.
@@ -92,7 +106,7 @@ Each skill directory follows a consistent layout:
   - Config baseline avoiding hardcoded access tokens and phone number IDs.
 - **References**: `doc-map.md`, `messages-api.md`, `templates-media-calling.md`, `webhooks-and-errors.md`.
 
-### 7. [WhatsApp Flows JSON](./whatsapp-flows-json/)
+### 8. [WhatsApp Flows JSON](./whatsapp-flows-json/)
 - **Focus**: Framework-agnostic rules for WhatsApp Flows JSON design, validation, and endpoint integration.
 - **Key points**:
   - Strict adherence to official Meta Flow JSON versions and component limits.
