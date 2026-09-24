@@ -3,7 +3,7 @@ import re
 import sys
 import yaml
 
-ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata"}
+ALLOWED_KEYS = {"name", "description", "license", "compatibility", "allowed-tools", "metadata"}
 NAME_PATTERN = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 IGNORED_DIRS = {".git", ".github", "scripts", "__pycache__", "node_modules"}
 

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Spec-Locked TDD"
+  short_description: "Drive behavior changes with red-green-refactor while protecting the test oracle."
+  default_prompt: "Use spec-locked TDD: shape observable behavior and invariants, prove RED, lock the specification and test oracle, implement the minimum GREEN change, refactor while green, then verify at the appropriate boundaries."
+policy:
+  allow_implicit_invocation: true
